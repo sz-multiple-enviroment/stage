@@ -45,12 +45,12 @@ jobs:
       - name: check folder
         run: ls -la
       - name: rimuove i files
-        run: git rm -r --cached ".github"
+        run: git rm -rf ".github"
         #run: sudo find -name ".github*" -mindepth 1 -exec rm -rf {} +
       - name: check folder
         run: ls -la
-      #- name: commit
-        #run: git commit -m ‘committing added changes’
+      - name: commit
+        run: git commit -m ‘Removed folder from repository’
       - name: push to dev repository
         run: git push https://$username:$repo_key@github.com/sz-multiple-enviroment/dev.git dev:main --force
         env:
