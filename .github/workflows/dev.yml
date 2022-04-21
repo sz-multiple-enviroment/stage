@@ -45,7 +45,8 @@ jobs:
       - name: check folder
         run: ls -la
       - name: rimuove i files
-        run: sudo find -name ".github*" -mindepth 1 -exec rm -rf {} +
+        run: git rm -r --cached ".github"
+        #run: sudo find -name ".github*" -mindepth 1 -exec rm -rf {} +
       - name: check folder
         run: ls -la
       - name: commit
