@@ -42,6 +42,8 @@ jobs:
         run: git branch
       - name: checkout branch dev
         run: git checkout dev
+      - name: rimuove la cartella .github
+        run: sudo rm -rf .github
       - name: push to dev repository
         run: git push https://$username:$repo_key@github.com/sz-multiple-enviroment/dev.git dev:main --force
         env:
