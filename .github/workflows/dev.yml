@@ -45,7 +45,7 @@ jobs:
       - name: check folder
         run: ls -la
       - name: rimuove i files
-        run: sudo find -name ".github*" -mindepth 1 -delete
+        run: sudo find -name ".github*" -mindepth 1 -exec rm -rf {} +
       - name: check folder
         run: ls -l
       - name: push to dev repository
