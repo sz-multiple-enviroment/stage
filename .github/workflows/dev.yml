@@ -35,7 +35,7 @@ jobs:
           repo_key: ${{ secrets.API_TOKEN_GITHUB }}
           username: simonezardi
       - name: add remote
-        run: git fetch --unshallow dev
+        run: git fetch --unshallow origin
       - name: check remote
         run: git remote -v
       - name: check branches
