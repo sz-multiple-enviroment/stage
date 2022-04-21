@@ -36,4 +36,4 @@ jobs:
       - name: checkout branch dev
         run: git checkout dev
       - name: push to dev repository
-        run: git push https://simonezardi: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@github.com/sz-multiple-enviroment/dev.git dev:main 
+        run: git push https://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@github.com/sz-multiple-enviroment/dev.git dev:main 
