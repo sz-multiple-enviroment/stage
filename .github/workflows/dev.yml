@@ -36,4 +36,4 @@ jobs:
       - name: checkout branch dev
         run: git checkout dev
       - name: push to dev repository
-        run: git push https://github.com/sz-multiple-enviroment/dev.git main 
+        run: git push dev dev:main 
