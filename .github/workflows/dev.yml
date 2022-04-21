@@ -25,15 +25,15 @@ jobs:
         run: mkdir output
       - name: check position
         run: ls -l
-      - name: creates output
-        run: cp /__w/stage/stage/ /__w/stage/stage/output
+       #- name: creates output
+      #  run: cp /__w/stage/stage/ /__w/stage/stage/output
       - name: Pushes to another repository
         id: push_directory
         uses: cpina/github-action-push-to-another-repository@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: output/
+          source-directory: /__w/stage/stage/
           destination-github-username: 'sz-multiple-enviroment'
           destination-repository-name: 'dev'
           user-email: simone.zardi@storci.com
