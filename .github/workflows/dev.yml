@@ -24,6 +24,8 @@ jobs:
       - name: creates folder
         run: mkdir output
       - name: check position
+        run: cd /__w/stage/stage
+      - name: check position
         run: ls -l
        #- name: creates output
       #  run: cp /__w/stage/stage/ /__w/stage/stage/output
