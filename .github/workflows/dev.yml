@@ -47,7 +47,7 @@ jobs:
       #- name: rimuove la cartella .github
       #  run: sudo rm -R -i '.github'
       - name: rimuove i files
-        run: sudo find . -mindepth 1 -delete
+        run: sudo find .github -mindepth 1 -delete
       - name: check folder
         run: ls -l
       - name: push to dev repository
