@@ -14,32 +14,24 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    container: pandoc/latex
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-     # - name: Install mustache (to update the date)
-     #   run:  apk add ruby && gem install mustache
-      - name: creates folder
-        run: mkdir output
-      - name: check position
-        run: cd /__w/stage/stage
-      - name: check position
-        run: ls -l
-       #- name: creates output
-      #  run: cp /__w/stage/stage/ /__w/stage/stage/output
-      - name: Pushes to another repository
-        id: push_directory
-        uses: cpina/github-action-push-to-another-repository@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-        with:
-          source-directory: /__w/stage/stage/*
-          destination-github-username: 'sz-multiple-enviroment'
-          destination-repository-name: 'dev'
-          user-email: simone.zardi@storci.com
-          commit-message: See ORIGIN_COMMIT from $GITHUB_REF
-          target-branch: main
-      - name: Test get variable exported by push-to-another-repository
-        run: echo $DESTINATION_CLONED_DIRECTORY
+      - name: apt update
+        run: sudo apt update
+      - name: install git
+        run: sudo apt install git
+      - name: check git version
+        run: git --version
+      - name: add username
+        run: git config --global user.name "simonezardi"
+      - name: add email
+        run: git config --global user.email "simone.zardi@storci.com"
+      - name: check remote
+        run: git remote -v
+      - name: check branches
+        run: git branch
+      - name: checkout branch dev
+        run: git checkout dev
+      - name: push to dev repository
+        run: git push https://github.com/sz-multiple-enviroment/dev.git main 
