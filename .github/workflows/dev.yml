@@ -50,7 +50,7 @@ jobs:
       - name: check folder
         run: ls -la
       - name: commit
-        run: git commit -m ${{ github.event.head_commit.message }}
+        run: git commit -m " ${{ github.event.head_commit.message }}"
       - name: push to dev repository
         run: git push https://$username:$repo_key@github.com/sz-multiple-enviroment/dev.git dev:main --force
         env:
