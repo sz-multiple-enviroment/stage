@@ -43,11 +43,9 @@ jobs:
       - name: checkout branch dev
         run: git checkout dev
       - name: check folder
-        run: ls -l
-      #- name: rimuove la cartella .github
-      #  run: sudo rm -R -i '.github'
+        run: ls -la
       - name: rimuove i files
-        run: sudo find .github -mindepth 1 -delete
+        run: sudo find -name ".github*" -mindepth 1 -delete
       - name: check folder
         run: ls -l
       - name: push to dev repository
