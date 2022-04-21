@@ -26,7 +26,7 @@ jobs:
       - name: check position
         run: ls -l
       - name: creates output
-        run: cp -r /__w/stage/stage/ /__w/stage/stage/output --exclude /__w/stage/stage/output
+        run: cp /__w/stage/stage/ /__w/stage/stage/output
       - name: Pushes to another repository
         id: push_directory
         uses: cpina/github-action-push-to-another-repository@main
