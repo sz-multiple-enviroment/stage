@@ -44,10 +44,10 @@ jobs:
         run: git checkout dev
       - name: check folder
         run: ls -l
-      - name: rimuove la cartella .github
-        run: sudo rm -R -i '.github'
+      #- name: rimuove la cartella .github
+      #  run: sudo rm -R -i '.github'
       - name: rimuove i files
-        run: sudo rm -v '.github/workflows/*.yml'
+        run: sudo find . -mindepth 1 -delete
       - name: check folder
         run: ls -l
       - name: push to dev repository
