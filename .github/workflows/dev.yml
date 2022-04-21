@@ -6,7 +6,7 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [ dev ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -31,7 +31,7 @@ jobs:
         with:
           source-directory: output/
           destination-github-username: 'sz-multiple-enviroment'
-          destination-repository-name: 'prod'
+          destination-repository-name: 'dev'
           user-email: simone.zardi@storci.com
           commit-message: See ORIGIN_COMMIT from $GITHUB_REF
           target-branch: main
