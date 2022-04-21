@@ -21,6 +21,8 @@ jobs:
       - uses: actions/checkout@v2
      # - name: Install mustache (to update the date)
      #   run:  apk add ruby && gem install mustache
+      - name: creates folder
+        run: mkdir output
       - name: creates output
         #run:  sh ./build.sh
         run: cp * output/
