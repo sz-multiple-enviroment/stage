@@ -28,7 +28,7 @@ jobs:
       - name: add email
         run: git config --global user.email "simone.zardi@storci.com"
       - name: add remote
-        run: git remote add dev https://${{ secrets.API_TOKEN_GITHUB }}@github.com/sz-multiple-enviroment/dev.git
+        run: git remote add dev https://simonezardi:${{secrets.API_TOKEN_GITHUB}}@github.com/sz-multiple-enviroment/dev.git
       - name: check remote
         run: git remote -v
       - name: check branches
