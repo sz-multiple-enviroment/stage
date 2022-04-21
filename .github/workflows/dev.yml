@@ -19,10 +19,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - name: Install mustache (to update the date)
-        run:  apk add ruby && gem install mustache
+     # - name: Install mustache (to update the date)
+     #   run:  apk add ruby && gem install mustache
       - name: creates output
-        run:  sh ./build.sh
+        #run:  sh ./build.sh
+        run: cp * output/
       - name: Pushes to another repository
         id: push_directory
         uses: cpina/github-action-push-to-another-repository@main
